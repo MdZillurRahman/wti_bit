@@ -1,6 +1,6 @@
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
-import 'tw-elements';
+import "tw-elements";
 import Home from "./Components/Home";
 import Dashboard from "./Components/Dashboard";
 import Courses from "./Components/Courses";
@@ -16,7 +16,7 @@ function App() {
     <div>
       <Routes>
         <Route path="/" element={<Home></Home>}></Route>
-        <Route path="/home" element={<Home></Home>}>
+        <Route path="/" element={<Home></Home>}>
           <Route path="dashboard" element={<Dashboard></Dashboard>}></Route>
           <Route path="courses" element={<Courses></Courses>}></Route>
           <Route path="students" element={<Students></Students>}></Route>
