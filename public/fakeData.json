@@ -7,36 +7,36 @@
   {
     "img": "https://i.ibb.co/L93yfGj/courses.png",
     "name": "Courses",
-    "link": "dashboard"
+    "link": "/home/courses"
   },
   {
     "img": "https://i.ibb.co/BgZkzZD/students.png",
     "name": "Students",
-    "link": "dashboard"
+    "link": "/home/students"
   },
   {
     "img": "https://i.ibb.co/B29DjDH/exams.png",
     "name": "Exams",
-    "link": "dashboard"
+    "link": "/home/exams"
   },
   {
     "img": "https://i.ibb.co/3RcCr3z/results.png",
     "name": "Results",
-    "link": "dashboard"
+    "link": "/home/results"
   },
   {
     "img": "https://i.ibb.co/dDxnCFj/notice-Board.png",
     "name": "Notice Board",
-    "link": "dashboard"
+    "link": "/home/noticeBoard"
   },
   {
     "img": "https://i.ibb.co/N9LRFrr/Live-Classes.png",
     "name": "Live Classes",
-    "link": "dashboard"
+    "link": "/home/liveClasses"
   },
   {
     "img": "https://i.ibb.co/xzCxfvD/notifications.png",
     "name": "Notifications",
-    "link": "dashboard"
+    "link": "/home/notifications"
   }
 ]
