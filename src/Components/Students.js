@@ -10,7 +10,6 @@ const Students = () => {
   const [modal, setModal] = useState(false);
   const [removeModal, setRemoveModal] = useState({});
 
-  console.log(removeModal);
   return (
     <div>
       <div className="flex justify-between p-4">
@@ -42,7 +41,7 @@ const Students = () => {
                 <tr className="hover cursor-pointer">
                   <td>{student.id}</td>
                   <td>{student.name}</td>
-                  <td>{student.class}</td>
+                  <td>{student.class}th</td>
                   {student.result === "Passed" ? (
                     <td>
                       <p className="text-white text-center bg-green-500 rounded-3xl w-[80px] px-1">

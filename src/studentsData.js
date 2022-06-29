@@ -2,7 +2,7 @@ const data = [
   {
     id: "1",
     name: "Robert Flex",
-    class: "8th",
+    class: "8",
     result: "Passed",
     score: "78/100",
     grade: "Excellent"
@@ -10,7 +10,7 @@ const data = [
   {
     id: "2",
     name: "Ralph Edwards",
-    class: "7th",
+    class: "7",
     result: "Failed",
     score: "20/100",
     grade: "Poor"
@@ -18,7 +18,7 @@ const data = [
   {
     id: "3",
     name: "Esther Howard",
-    class: "9th",
+    class: "9",
     result: "Passed",
     score: "60/100",
     grade: "Average"
@@ -26,7 +26,7 @@ const data = [
   {
     id: "4",
     name: "Eleanor Pena",
-    class: "8th",
+    class: "8",
     result: "Passed",
     score: "60/100",
     grade: "Average"
@@ -34,7 +34,7 @@ const data = [
   {
     id: "5",
     name: "Arlene McCoy",
-    class: "7th",
+    class: "7",
     result: "Passed",
     score: "85/100",
     grade: "Excellent"
@@ -42,7 +42,7 @@ const data = [
   {
     id: "6",
     name: "Marvin McKinney",
-    class: "9th",
+    class: "9",
     result: "Failed",
     score: "25/100",
     grade: "Poor"
@@ -50,18 +50,10 @@ const data = [
   {
     id: "7",
     name: "Wade Warren",
-    class: "7th",
+    class: "7",
     result: "Passed",
     score: "90/100",
     grade: "Excellent"
-  },
-  {
-    id: "",
-    name: "",
-    class: "",
-    result: "",
-    score: "",
-    grade: ""
   }
 ]
 

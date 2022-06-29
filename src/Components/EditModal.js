@@ -1,76 +1,59 @@
-import React, { useRef } from "react";
-import { useForm } from "react-hook-form";
+import React from "react";
+import { useForm } from 'react-hook-form';
+import { yupResolver } from '@hookform/resolvers/yup';
+import * as yup from 'yup';
+
+const schema = yup.object().shape({
+    studentName: yup.string().required(),
+    class: yup.number().positive().integer().min(1).max(12).required(),
+    score: yup.number().positive().integer().min(0).max(100).required()
+})
 
 const EditModal = () => {
   const {
     register,
+    handleSubmit,
     formState: { errors },
-  } = useForm();
+  } = useForm({ resolver: yupResolver(schema)});
 
-  const score = useRef(null);
-
-  const submit = () => {
-    const final = score.current;
-    console.log(final);
-  };
+ const submitForm = (data) => {console.log(data);}
 
   return (
-    <div className="uppercase">
+    <div>
       <input type="checkbox" id="editModal" class="modal-toggle" />
       <div class="modal">
-        <div class="modal-box ">
-          <h3 class="text-lg font-bold my-4">Edit Student</h3>
-          <hr className=" border-[#D3D6DB] border-solid w-full " />
-          <div>
-            <label>Student Name*</label> <br />
-            <input
-              className="border w-full rounded"
-              {...register("studentName", { required: true })}
-            />
-            {errors.studentName?.type === "required" &&
-              "Name field cannot be left blank"}{" "}
-            <br />
-            <label>Class*</label> <br />
-            <input
-              className="border w-full rounded"
-              {...register("class", { required: true })}
-            />
-            {errors.class && (
-              <p>Error: Please input values between 1 {"&"} 12</p>
-            )}{" "}
-            <p className="text-gray-400 text-sm">
-              Please input values between 1 {"&"} 12
-            </p>
-            <label>Score*</label> <br />
-            <input
-              ref={score}
-              className="border w-full rounded"
-              {...register("score", { required: "Email Address is required" })}
-            />
-            <p className="text-gray-400 text-sm">
-              Please input values between 0 {"&"} 100
-            </p>
-            <p>{errors.score?.message}</p>
-            <label htmlFor="">Result</label>
-            <p className="mb-4">-</p>
-            <label htmlFor="">Grade</label>
-            <p className="mb-4">-</p>
+        <div class="modal-box h-[500px]">
+          <h3 class="text-lg font-bold my-2">Edit Student</h3>
+          <hr className=" border-[#D3D6DB] border-solid w-full mb-4" />
+
+          <form onSubmit={handleSubmit(submitForm)}>
+            <label className="uppercase text-gray-400">Student Name*</label> 
+            <input className="border w-full rounded-lg" type="text" name="studentName"  
+            {...register("studentName")}/>
+          {errors.studentName && <p className="text-red-500 mb-4">Error: Name field cannot be left blank</p> }
+
+            <label className="uppercase text-gray-400">Class*</label>
+            <input className="border w-full rounded-lg" type="text" name="class" 
+            {...register("class")} />
+            {errors.class && <p className="text-red-500 mb-4">Error: Please input values between 1 {"&"} 12</p> }
+
+            <label className="uppercase text-gray-400">Score*</label>
+            <input className="border w-full rounded-lg" type="text" name="score" 
+            {...register("score")} />
+            {errors.score && <p className="text-red-500 mb-4">Error: Score field cannot be left blank</p> }
+
+            <label className="uppercase text-gray-400">Result</label>
+            <p>-</p>
+
+            <label className="uppercase text-gray-400">Grade</label>
+            <p>-</p>
+
             <hr className=" border-[#D3D6DB] border-solid w-full " />
-            <div className="my-6 flex justify-end">
-              <label
-                className="my-6 flex justify-end text-[#2CA4D8] border border-[#2CA4D8] px-6 py-2 rounded-xl mr-4"
-                htmlFor="editModal"
-              >
-                Cancel
-              </label>
-              <label
-                className="my-6 flex justify-end text-white border bg-[#2CA4D8] px-6 py-2 rounded-xl"
-                onClick={submit}
-              >
-                Submit
-              </label>
-            </div>
-          </div>
+
+            <label className="absolute right-28 my-4 text-[#2CA4D8] border border-[#2CA4D8] px-5 py-1 rounded-xl mr-6 uppercase" htmlFor="editModal">Cancel</label>
+            <input className="absolute right-4 my-4 my-4 text-white border bg-gray-400 px-5 py-1 rounded-xl uppercase" type="submit" value="Confirm" id="submit" />
+          </form>
+
         </div>
       </div>
     </div>

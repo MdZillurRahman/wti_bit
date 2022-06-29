@@ -20,7 +20,7 @@ const RemoveModal = ({removeModal}) => {
             
             <div className="flex justify-end">
                 <label className="my-6 flex justify-end text-[#2CA4D8] border border-[#2CA4D8] px-6 py-2 rounded-xl mr-4" htmlFor="removeModal">Cancel</label>
-                <label className="my-6 flex justify-end text-white border bg-[#2CA4D8] px-6 py-2 rounded-xl">Submit</label>
+                <label className="my-6 flex justify-end text-white border bg-red-500 px-6 py-2 rounded-xl">Remove</label>
             </div>
             
           </div>
