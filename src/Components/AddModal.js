@@ -32,26 +32,33 @@ const AddModal = () => {
             <div class="modal-box h-[500px]">
               <h3 class="text-lg font-bold my-2">Add Student</h3>
               <hr className=" border-[#D3D6DB] border-solid w-full mb-4" />
-    
+
+
+            { /* ADDStudent  */}
               <form onSubmit={handleSubmit(submitForm)}>
+
+                {/* Name */}
                 <label className="uppercase text-gray-400 ">Student Name*</label> 
                 <input className="border w-full rounded-lg mb-4" type="text" name="studentName"  
                 {...register("studentName")}/>
                 
               {errors.studentName && <p className="text-red-500 mb-4">Error: Name field cannot be left blank</p> }
     
+                {/* Class  */}
                 <label className="uppercase text-gray-400">Class*</label>
                 <input className="border w-full rounded-lg" type="text" name="class" 
                 {...register("class")} />
                 <p className="text-xs text-gray-400 mb-4">Please input values between 1 {"&"} 12</p>
                 {errors.class && <p className="text-red-500 mb-4">Error: Please input values between 1 {"&"} 12</p> }
-    
+
+               {/* Score  */}
                 <label className="uppercase text-gray-400">Score*</label>
                 <input className="border w-full rounded-lg" type="text" name="score" 
                 {...register("score")} id="score" onBlur={handleChange}/>
                 <p className="text-xs text-gray-400 mb-4">Please input values between 0 {"&"} 100</p>
                 {errors.score && <p className="text-red-500 mb-4">Error: Score field cannot be left blank</p> }
-    
+
+                {/* Result  */}
                 <label className="uppercase text-gray-400">Result</label>
                 {score>= 31 ? <p className="text-white text-center bg-green-500 rounded-3xl w-[80px] px-1 my-2">
                         Passed
@@ -61,7 +68,8 @@ const AddModal = () => {
                         Failed
                       </p> : <p>-</p>
                       }
-    
+
+                 {/* Grade  */}
                 <label className="uppercase text-gray-400">Grade</label>
                 {score>= 76 ? <p className="text-green-500 font-bold my-2">
                         Excellent
@@ -76,10 +84,11 @@ const AddModal = () => {
                        </p> : <p>-</p>
                       }
     
-                <hr className=" border-[#D3D6DB] border-solid w-full " />
+                <hr className=" border-[#D3D6DB] border-solid w-full" />
     
-                <label className="absolute right-28 my-4 text-[#2CA4D8] border border-[#2CA4D8] px-5 py-1 rounded-xl mr-6 uppercase" htmlFor="addModal">Cancel</label>
-                <input className="absolute right-4 my-4 text-white border bg-[#2CA4D8] px-5 py-1 rounded-xl uppercase" type="submit" value="Confirm" id="submit" />
+                {/* Button  */}
+                <label className="absolute right-28 my-3 text-[#2CA4D8] border border-[#2CA4D8] px-5 py-1 rounded-xl mr-6 uppercase" htmlFor="addModal">Cancel</label>
+                <input className="absolute right-4 my-3 text-white border bg-[#2CA4D8] px-5 py-1 rounded-xl uppercase" type="submit" value="Confirm" id="submit" />
               </form>
     
             </div>

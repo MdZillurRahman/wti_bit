@@ -26,25 +26,32 @@ const EditModal = () => {
           <h3 class="text-lg font-bold my-2">Edit Student</h3>
           <hr className=" border-[#D3D6DB] border-solid w-full mb-4" />
 
+          { /* ADDStudent  */}
           <form onSubmit={handleSubmit(submitForm)}>
+
+            {/* Name */}
             <label className="uppercase text-gray-400">Student Name*</label> 
             <input className="border w-full rounded-lg" type="text" name="studentName"  
             {...register("studentName")}/>
           {errors.studentName && <p className="text-red-500 mb-4">Error: Name field cannot be left blank</p> }
 
+            {/* Class  */}
             <label className="uppercase text-gray-400">Class*</label>
             <input className="border w-full rounded-lg" type="text" name="class" 
             {...register("class")} />
             {errors.class && <p className="text-red-500 mb-4">Error: Please input values between 1 {"&"} 12</p> }
 
+            {/* Score  */}
             <label className="uppercase text-gray-400">Score*</label>
             <input className="border w-full rounded-lg" type="text" name="score" 
             {...register("score")} />
             {errors.score && <p className="text-red-500 mb-4">Error: Score field cannot be left blank</p> }
 
+            {/* Result  */}
             <label className="uppercase text-gray-400">Result</label>
             <p>-</p>
 
+            {/* Grade  */}
             <label className="uppercase text-gray-400">Grade</label>
             <p>-</p>
 
