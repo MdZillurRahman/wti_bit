@@ -63,7 +63,7 @@ const AddModal = () => {
                 {score>= 31 ? <p className="text-white text-center bg-green-500 rounded-3xl w-[80px] px-1 my-2">
                         Passed
                       </p>
-                      : score >= -1 ?
+                      : score >0 ?
                       <p className="text-white text-center bg-red-500 rounded-3xl w-[70px] px-1 my-2">
                         Failed
                       </p> : <p>-</p>
@@ -78,7 +78,7 @@ const AddModal = () => {
                       <p className="text-blue-500 font-bold my-2">
                         Average
                       </p> :
-                       score >= -1 ?
+                       score > 0 ?
                        <p className="text-red-500 font-bold my-2">
                          Poor
                        </p> : <p>-</p>
